@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { io, Socket } from 'socket.io-client';
 import Lobby from './components/Lobby';
 import GameRoom from './components/GameRoom';
+import { BASE_URL } from './config';
 
-const socket: Socket = io(import.meta.env.VITE_SOCKET_URL || 'http://localhost:4000', {
+const socket: Socket = io(BASE_URL, {
   transports: ['websocket']
 });
 
@@ -54,4 +55,3 @@ function App() {
 }
 
 export default App;
-
